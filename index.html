@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cedric Brossy Borne Nongbet | ML Engineer</title>
+  <style>
+    :root {
+      --primary: #f97316;
+      --dark: #1f1f1f;
+      --light: #f5f5f5;
+      --text: #111;
+      --bg: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--dark);
+      color: white;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav button {
+      background-color: var(--primary);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 span {
+      color: var(--primary);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .hero-buttons button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background-color: black;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .hero-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-img {
+      flex: 1;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .hero-img img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul.skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.skills li {
+      background: var(--light);
+      padding: 0.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: var(--light);
+      border-radius: 8px;
+    }
+
+    .project:hover {
+      background: #eee;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--dark);
+      color: white;
+    }
+
+    .dark-mode {
+      --bg: #121212;
+      --text: #eee;
+      --light: #1f1f1f;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Cedric</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="toggle-theme">Toggle Theme</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1><span id="typing"></span></h1>
+      <p>MCA graduate from Assam Don Bosco University with a deep passion for Machine Learning, Data Science, and building scalable AI-powered applications that solve real-world problems.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" id="hireMeBtn">Hire Me</button>
+        <button class="btn-secondary" id="readMoreBtn">Read More</button>
+      </div>
+      <p id="readMore" style="display:none; margin-top:1rem;">I enjoy experimenting with cutting-edge models, creating ML models, and continuously learning new tools in the AI ecosystem.</p>
+    </div>
+    <div class="hero-img">
+      <img src="pic_1.jpg" alt="Cedric's Photo" />
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Cedric Brossy Borne Nongbet, a results-oriented Machine Learning Engineer who transforms ideas into intelligent systems with clean code and data-driven strategies.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Python</li>
+      <li>TensorFlow</li>
+      <li>Scikit-learn</li>
+      <li>HTML/CSS</li>
+      <li>JavaScript</li>
+      <li>Git & GitHub</li>
+      <li>SQL</li>
+      <li>Linux</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div id="project-list"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p>Email: cedric@example.com | Phone: +91-1234567890</p>
+  </section>
+
+  <footer>
+    <p id="footer-time"></p>
+  </footer>
+
+  <script>
+    // Typing effect
+    const typingText = "I'm Cedric, a Machine Learning Engineer";
+    const typingEl = document.getElementById("typing");
+    let i = 0;
+    function type() {
+      if (i < typingText.length) {
+        typingEl.innerHTML += typingText.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      }
+    }
+    type();
+
+    // Dark mode toggle
+    document.getElementById("toggle-theme").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    // Read More toggle
+    document.getElementById("readMoreBtn").addEventListener("click", () => {
+      const more = document.getElementById("readMore");
+      more.style.display = more.style.display === "none" ? "block" : "none";
+    });
+
+    // Footer time
+    function updateTime() {
+      document.getElementById("footer-time").textContent = "Current Time: " + new Date().toLocaleString();
+    }
+    updateTime();
+    setInterval(updateTime, 60000);
+
+    // Hire Me scroll
+    document.getElementById("hireMeBtn").addEventListener("click", () => {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Projects from array
+    const projects = [
+      {
+        title: "AI Resume Ranker",
+        description: "Ranks resumes based on job descriptions using NLP and cosine similarity.",
+        link: "#"
+      },
+      {
+        title: "Facial Emotion Recognition",
+        description: "Detects human emotions in real-time video streams using CNN models.",
+        link: "#"
+      }
+    ];
+    const container = document.getElementById("project-list");
+    projects.forEach(p => {
+      const div = document.createElement("div");
+      div.classList.add("project");
+      div.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p><a href="${p.link}" target="_blank">View</a>`;
+      container.appendChild(div);
+    });
+
+    // Form validation
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if (!name || !email || !message) {
+        alert("Please fill all fields!");
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
